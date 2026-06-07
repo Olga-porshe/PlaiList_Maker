@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/nastroiki"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:title="@string/settings"
+        app:navigationIcon="@drawable/arrow_left_back"
+        app:titleTextColor="@color/text_primary"
+
+        android:background="@drawable/image_button_background"
+        app:contentInsetStartWithNavigation="0dp"
+        app:titleMarginStart="0dp"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_dark_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textSize="18sp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/dark_mode" />
+
+    <ImageButton
+        android:id="@+id/podelitsya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+
+        android:background="@drawable/image_button_background"
+        android:contentDescription="@string/share_app"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_share_" />
+
+    <ImageButton
+        android:id="@+id/poddergka"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        android:background="@drawable/image_button_background"
+        android:contentDescription="@string/write_support"
+        android:src="@drawable/ic_arrow_left"
+        android:scaleType="centerCrop" />
+
+    <ImageButton
+        android:id="@+id/soglashenie"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        android:background="@drawable/image_button_background"
+        android:contentDescription="@string/user_agreement"
+        android:src="@drawable/ic_arrow_right"
+        android:scaleType="centerCrop"/>
+
+</LinearLayout>
