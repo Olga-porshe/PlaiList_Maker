@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         val btnSearch = findViewById<ImageButton>(R.id.btnSearch)
         val btnSetting = findViewById<ImageButton>(R.id.setting)
 
-
         btnSearch.setOnClickListener {
             val btnSearch = Intent(this, SearchActivity::class.java)
             startActivity(btnSearch)
