@@ -6,6 +6,24 @@
     android:orientation="vertical"
     android:paddingBottom="16dp"
     android:background="@color/blue">
+    <!-- выше было : android:padding="16dp" -->
+
+    <!-- Заголовок
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:layout_marginBottom="32dp" /> -->
+
+
+    <!--android:background="@color/your_background_color"-->
+    <!--app:titleGravity="center" было ниже в заголовке,
+    а потом
+    app:titleCentered="true"
+    -->
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -46,6 +64,8 @@
         android:background="@drawable/image_button_background"
         android:scaleType="centerCrop"/>
 
+    <!--android:background="@null" -->
+    <!--app:shapeAppearanceOverlay="@style/RoundedImageButtonShape"-->
 
     <ImageButton
         android:id="@+id/setting"
