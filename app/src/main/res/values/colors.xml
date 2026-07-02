@@ -2,7 +2,11 @@
 <resources>
 
     <color name="btn_background_color">#E0E0E0</color>
+
     <color name="text_primary">#000000</color>
+
+
+    <color name="text_primary2">#ffffff</color>
 
     <color name="purple">#8E2DE2</color>
     <color name="white">#FFFFFF</color>
@@ -21,7 +25,40 @@
     <color name="dark_gray">#A9A9A9</color> <!-- Тёмно-серый -->
     <color name="gainsboro">#DCDCDC</color> <!-- Очень светлый серый -->
     <color name="figma_sinii">#3498DB</color>
+
+
+
+
+    <color name="colorOnSurface">#000000</color> <!-- Чёрный для иконок -->
+
+    <color name="hint_text_color">#99000000</color>
+    <!-- Светлая тема -->
+
+    <color name="bg_surface">#FFFFFF</color>
+
+    <color name="bg_card">#FFFFFF</color>
+
+    <color name="icon_primary">#000000</color>
+
+    <color name="border_light">#E0E0E0</color>
+
     <color name="figma_sinii2">#3772E7</color>
+
+    <color name="search_field_background">#E6E8EB</color>
+    <color name="accent_blue">#2196F3</color>
+    <color name="text_secondary">#757575</color>
+
+
+
+
+
+
+    <!-- Цвет иконки и текста - черный -->
+    <color name="search_content_color">#000000</color>
+
+    <!-- Цвет подсказки - полупрозрачный черный -->
+    <color name="search_hint_color">#99000000</color>
+
 
 
 </resources>

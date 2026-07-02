@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <resources>
+        <!-- Тёмная тема -->
+    <color name="bg_surface">#000000</color>
+
+    <color name="bg_card">#1E1E1E</color>
+
+    <color name="text_primary">#ffffff</color>
+    <color name="text_primary2">#000000</color>
+
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="icon_primary">#FFFFFF</color>
+
+    <color name="border_light">#333333</color>
+
+    <color name="figma_sinii2">#000000</color>
+
+    <color name="white">#000000</color>
+
+    <color name="accent_blue">#64B5F6</color>
+
+    <color name="hint_text_color">#80FFFFFF</color>
+
+    <color name="colorOnSurface">#FFFFFF</color>
+    <color name="search_field_background">#ffffff</color>
+
+    <!-- ЭТО ВАЖНО: Цвет иконки и текста в поле - ТЕМНЫЙ (почти черный) -->
+    <color name="search_content_color">#212121</color>
+
+    <!-- ЭТО ВАЖНО: Цвет подсказки - полупрозрачный темный -->
+    <color name="search_hint_color">#99000000</color>
+
+
+</resources>
+
+

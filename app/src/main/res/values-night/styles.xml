@@ -2,7 +2,7 @@
 
 <resources>
 
-  <style name="Style1" parent="Widget.MaterialComponents.ActionBar.Primary">
+    <style name="Style1" parent="Widget.MaterialComponents.ActionBar.Primary">
 
         <item name="android:layout_gravity" >center</item>
         <item name="android:background">@drawable/image_button_background</item>
@@ -14,7 +14,6 @@
         <item name="android:fontFamily">@font/ys_text_bold</item>
 
     </style>
-
 
     <style name="Style2" parent="Widget.MaterialComponents.ActionBar.Primary">
         <item name="android:background">@drawable/image_button_background</item>
@@ -38,18 +37,15 @@
         <item name="android:background">?attr/colorSurface</item>
 
         <!-- Tint для иконок -->
+        <item name="android:tint">?attr/colorOnSurface</item>
 
 
-
-
+        <item name="android:foreground">?attr/selectableItemBackground</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
 
     </style>
 
-    <style name="RoundedImageButton" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
-    </style>
+
 
 </resources>

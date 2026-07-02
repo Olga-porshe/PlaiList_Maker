@@ -3,5 +3,21 @@
     <style name="Base.Theme.PlaiListMaker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:windowBackground">@color/bg_surface</item>
+        <!-- Цвет фона тулбара (Surface) -->
+        <item name="colorSurface">@color/bg_surface</item>
+        <!-- Цвет текста на тулбаре (On Surface) -->
+        <item name="colorOnSurface">@color/text_primary</item>
+        <!-- Цвет иконки навигации (back/hamburger) -->
+        <item name="colorOnPrimary">@color/text_primary</item>
+        <!-- Основной акцент (если нужен для иконок/выделения) -->
+        <item name="colorPrimary">@color/figma_sinii2</item>
+
+
+
+
+
     </style>
+
+
 </resources>

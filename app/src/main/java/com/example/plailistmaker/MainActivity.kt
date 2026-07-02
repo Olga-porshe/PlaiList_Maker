@@ -7,20 +7,22 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
-        enableEdgeToEdge()
 
         setContentView(R.layout.activity_main)
-
-
 
         val btnMediaLibrary = findViewById<ImageButton>(R.id.media_library)
         val btnSearch = findViewById<ImageButton>(R.id.btnSearch)
         val btnSetting = findViewById<ImageButton>(R.id.setting)
+
+
 
         btnSearch.setOnClickListener {
             val btnSearch = Intent(this, SearchActivity::class.java)

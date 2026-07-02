@@ -12,4 +12,31 @@
     <string name="user_agreement" translatable="false">Пользовательское соглашение</string>
     <string name="write_support" translatable="false">Написать в поддержку</string>
 
+
+
+    <!-- Тексты для кнопок (если они не заданы в layout через @string) -->
+    <string name="share_app_text">Поделиться приложением</string>
+    <string name="support_text">Написать в поддержку</string>
+    <string name="agreement_text">Пользовательское соглашение</string>
+
+    <!-- Текст для шаринга (сообщение + ссылка) -->
+    <string name="share_app_message">Узнайте, как создавать такие приложения! Курс по Android-разработке в Яндекс Практикуме: https://practicum.yandex.ru/android-developer/</string>
+
+    <!-- Тема и тело письма -->
+    <string name="email_subject">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="email_body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
+
+    <!-- Email студента (замените на ваш реальный адрес для теста) -->
+    <string name="student_email">student.email@example.com</string>
+
+    <!-- Ссылка на оферту Яндекс Практикума -->
+    <string name="offer_url">https://yandex.ru/legal/practicum_offer/</string>
+
+    <string name="search_hint">Поиск</string>
+    <string name="search_icon_desc">Иконка поиска</string>
+    <string name="clear_search">Очистить поиск</string>
+    <string name="no_results">Ничего не найдено</string>
+
+    <string name="search_title">Поиск</string>
+
 </resources>

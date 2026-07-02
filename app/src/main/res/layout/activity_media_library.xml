@@ -7,4 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MediaLibraryActivity">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topToolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:title="Медиатека"
+        app:titleTextColor="@android:color/white" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
