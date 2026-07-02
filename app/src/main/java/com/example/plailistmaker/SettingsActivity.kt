@@ -16,9 +16,9 @@ import androidx.core.view.updatePadding
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        enableEdgeToEdge()
-        super.onCreate(savedInstanceState)
 
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
 
         setContentView(R.layout.activity_settings)
 
