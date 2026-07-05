@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <resources>
-        <!-- Тёмная тема -->
+<resources>
+
     <color name="bg_surface">#000000</color>
 
     <color name="bg_card">#1E1E1E</color>
@@ -23,15 +23,21 @@
     <color name="hint_text_color">#80FFFFFF</color>
 
     <color name="colorOnSurface">#FFFFFF</color>
-    <color name="search_field_background">#ffffff</color>
 
-    <!-- ЭТО ВАЖНО: Цвет иконки и текста в поле - ТЕМНЫЙ (почти черный) -->
-    <color name="search_content_color">#212121</color>
 
-    <!-- ЭТО ВАЖНО: Цвет подсказки - полупрозрачный темный -->
-    <color name="search_hint_color">#99000000</color>
 
+    <color name="search_content_color">#000000</color>
+
+
+
+    <color name="search_text_color1">#ffffff</color>
+
+
+    <color name="white1">#000000</color>
+
+    <color name="search_field_background">#FFFFFF</color> <!-- БЕЛЫЙ ФОН СТРОКИ -->
+    <color name="search_text_color">#000000</color> <!-- ЧЕРНЫЙ ТЕКСТ -->
+    <color name="search_hint_color">#888888</color> <!-- Серый плейсхолдер -->
+    <color name="search_icon_color">#000000</color> <!-- ЧЕРНАЯ ЛУПА -->
 
 </resources>
-
-

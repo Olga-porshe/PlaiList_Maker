@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="16dp"
     android:background="@color/figma_sinii2">
+
+    <!-- 1. Тулбар с заголовком -->
+
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -23,31 +26,57 @@
         android:layout_marginTop="20dp"
         />
 
-    <ImageButton
-        android:id="@+id/btnSearch"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/search"
-        android:src="@drawable/search"
-        app:shapeAppearanceOverlay="@style/RoundedImageButton"
-
-        style="@style/Style1"/>
 
 
 
-    <ImageButton
-        android:id="@+id/media_library"
-        android:src="@drawable/media_library"
-        android:contentDescription="@string/media_library"
-        android:layout_margin="16dp"
-        style="@style/Style1"
-        app:shapeAppearanceOverlay="@style/RoundedImageButton"/>
 
+    <!-- 2. Контейнер для кнопок -->
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:columnCount="1"
+        app:rowCount="3">
 
-    <ImageButton
-        android:id="@+id/setting"
-        android:src="@drawable/settings"
-        android:contentDescription="@string/settings"
-        app:shapeAppearanceOverlay="@style/RoundedImageButton"
-        style="@style/Style1"/>
+        <!-- Кнопка Поиск -->
+        <ImageButton
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/search"
+            android:src="@drawable/search"
+            style="@style/Style1"
+            app:shapeAppearanceOverlay="@style/RoundedImageButton"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:layout_gravity="center"/>
+
+        <!-- Кнопка Медиатека -->
+        <ImageButton
+            android:id="@+id/media_library"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/media_library"
+            android:src="@drawable/media_library"
+            style="@style/Style1"
+            app:shapeAppearanceOverlay="@style/RoundedImageButton"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:layout_gravity="center"/>
+
+        <!-- Кнопка Настройки -->
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/settings"
+            android:src="@drawable/settings"
+            style="@style/Style1"
+            app:shapeAppearanceOverlay="@style/RoundedImageButton"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:layout_gravity="center"/>
+
+    </androidx.gridlayout.widget.GridLayout>
 
 </LinearLayout>

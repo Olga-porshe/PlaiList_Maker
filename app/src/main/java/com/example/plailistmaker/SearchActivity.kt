@@ -1,137 +1,114 @@
 package com.example.plailistmaker
 
-import android.content.Context
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.activity.enableEdgeToEdge
 import com.google.android.material.appbar.MaterialToolbar
-import androidx.core.view.updatePadding
+import androidx.appcompat.widget.SearchView
+import android.graphics.Color
+import android.graphics.PorterDuff
+
+
+
 
 class SearchActivity : AppCompatActivity() {
 
-    private lateinit var searchQuery: EditText
-    private lateinit var clearButton: ImageButton
+    private lateinit var toolbar: MaterialToolbar
+    private lateinit var searchView: SearchView
+
+    // Переменная для хранения текущего запроса (для логики или передачи дальше)
     private var currentQuery = ""
 
-    //вставляю компаньон(последняя задача)
-
     companion object {
-
         private const val SAVED_QUERY_KEY = "saved_query"
     }
-    // здесь конец
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
         super.onCreate(savedInstanceState)
-
         enableEdgeToEdge()
         setContentView(R.layout.activity_search)
 
-
-
-        /// КНОПКА НАЗАД и отступы
-
-        val toolbar = findViewById<MaterialToolbar>(R.id.topToolbar)
+        // 1. Инициализация тулбара
+        toolbar = findViewById(R.id.toolbar_search)
         setSupportActionBar(toolbar)
 
-        /*
-        ViewCompat.setOnApplyWindowInsetsListener(toolbar) { view, windowInsets ->
-            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-
-            view.updatePadding(top = insets.top)
-            WindowInsetsCompat.CONSUMED
-        }
-
-        */
-
-        setSupportActionBar(toolbar)
-
-
+        // Настройка кнопки "Назад"
         toolbar.setNavigationOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        //КОНЕЦ КОДА
+        // 2. Инициализация SearchView
+        searchView = findViewById(R.id.searchView)
 
 
-        // Инициализация элементов
-        searchQuery = findViewById(R.id.search_query)
-        clearButton = findViewById(R.id.clear_button)
 
+        // 3. Настройка SearchView
+        setupSearchView()
 
-        setupSearchField()
-
-
-        setupClearButton()
-
-        //  Заглушка для будущих задач
-        setupSearchLogicStub()
-    }
-
-
-    private fun setupSearchField() {
-        searchQuery.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                currentQuery = s?.toString() ?: ""
-                updateClearButtonVisibility()
+        // 4. Восстановление сохраненного запроса (если Activity пересоздалась)
+        if (savedInstanceState != null) {
+            val restoredQuery = savedInstanceState.getString(SAVED_QUERY_KEY)
+            if (!restoredQuery.isNullOrBlank()) {
+                searchView.setQuery(restoredQuery, false) // false = не запускать поиск сразу
+                currentQuery = restoredQuery
             }
-
-            override fun afterTextChanged(s: Editable?) {}
-        })
-    }
-
-
-    private fun updateClearButtonVisibility() {
-        clearButton.visibility = if (currentQuery.isNotEmpty()) View.VISIBLE else View.GONE
-    }
-
-
-    private fun setupClearButton() {
-        clearButton.setOnClickListener {
-            searchQuery.setText("")
-            currentQuery = ""
-
-
-            searchQuery.clearFocus()
-
-
-            hideKeyboard()
-
-
         }
     }
 
-    //заглушка
-    private fun setupSearchLogicStub() {
-        searchQuery.setOnEditorActionListener { v, actionId, event ->
-            if (actionId == android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH) {
+    private fun setupSearchView() {
+        // Включаем кнопку отправки (лупа справа)
+        searchView.isSubmitButtonEnabled = true
 
-                Toast.makeText(this, "Поиск по запросу: \$currentQuery", Toast.LENGTH_SHORT).show()
+        // --- ГЛАВНАЯ ЛОГИКА ПОИСКА ---
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+
+            // Вызывается, когда пользователь печатает текст
+            override fun onQueryTextChange(newText: String?): Boolean {
+                currentQuery = newText ?: ""
+                // Здесь можно делать "живой" поиск (фильтрацию списка)
+                // updateRecyclerView(currentQuery)
+                return true
+            }
+
+            // Вызывается, когда пользователь нажал кнопку "Поиск" (лупа справа)
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                currentQuery = query ?: ""
+                performSearch(currentQuery)
                 hideKeyboard()
-                true
-            } else {
-                false
+                return true
             }
+        })
+
+        // --- ЛОГИКА КНОПКИ ОЧИСТКИ (КРЕСТИК) ---
+        // В SearchView крестик встроен. Нам нужно просто обработать его нажатие.
+        searchView.setOnCloseListener {
+            currentQuery = ""
+            // Здесь логика, если нужно очистить список при нажатии крестика
+            // clearResults()
+            true // true = считаем, что обработали клик и закрыли поиск
         }
+
+        // Опционально: можно принудительно показать крестик, если он скрыт
+        // searchView.query = ""
     }
 
+    private fun performSearch(query: String) {
+        Toast.makeText(this, "Выполняем поиск по запросу: \$query", Toast.LENGTH_SHORT).show()
+        // Сюда вставляй реальную логику поиска (запрос к базе данных или API)
+    }
 
     private fun hideKeyboard() {
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
-        imm?.hideSoftInputFromWindow(searchQuery.windowToken, 0)
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
+        imm?.hideSoftInputFromWindow(searchView.windowToken, 0)
+    }
+
+    // Сохраняем состояние при повороте экрана или уходе в фон
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(SAVED_QUERY_KEY, currentQuery)
     }
 }
