@@ -39,7 +39,7 @@ class SettingsActivity : AppCompatActivity() {
         }
 
 
-        // Кнопка «Поделиться приложением»
+
         val btnShare = findViewById<ImageButton>(R.id.podelitsya)
         btnShare.setOnClickListener {
             val shareIntent = Intent(Intent.ACTION_SEND).apply {
@@ -50,7 +50,7 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(shareIntent, getString(R.string.share_app_text)))
         }
 
-        // Кнопка «Написать в поддержку»
+
         val btnSupport = findViewById<ImageButton>(R.id.poddergka)
         btnSupport.setOnClickListener {
             val email = getString(R.string.student_email)
@@ -58,7 +58,7 @@ class SettingsActivity : AppCompatActivity() {
             val body = getString(R.string.email_body)
 
 
-            // кнопка - написать в поддержку
+
 
 
 
@@ -80,7 +80,7 @@ class SettingsActivity : AppCompatActivity() {
         }
 
 
-        // Кнопка «Пользовательское соглашение»
+
 
 
         val btnAgreement = findViewById<ImageButton>(R.id.soglashenie)

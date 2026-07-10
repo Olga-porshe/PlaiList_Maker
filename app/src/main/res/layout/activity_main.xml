@@ -30,7 +30,7 @@
 
 
 
-    <!-- 2. Контейнер для кнопок -->
+
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -38,7 +38,7 @@
         app:columnCount="1"
         app:rowCount="3">
 
-        <!-- Кнопка Поиск -->
+
         <ImageButton
             android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
@@ -51,7 +51,7 @@
             app:layout_rowWeight="1"
             app:layout_gravity="center"/>
 
-        <!-- Кнопка Медиатека -->
+
         <ImageButton
             android:id="@+id/media_library"
             android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
             app:layout_rowWeight="1"
             app:layout_gravity="center"/>
 
-        <!-- Кнопка Настройки -->
+
         <ImageButton
             android:id="@+id/setting"
             android:layout_width="wrap_content"

@@ -2,25 +2,27 @@ package com.example.plailistmaker
 
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
+import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.activity.enableEdgeToEdge
 import com.google.android.material.appbar.MaterialToolbar
-import androidx.appcompat.widget.SearchView
-import android.graphics.Color
-import android.graphics.PorterDuff
-
-
-
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.ImageView
 
 class SearchActivity : AppCompatActivity() {
 
     private lateinit var toolbar: MaterialToolbar
-    private lateinit var searchView: SearchView
+    private lateinit var searchQuery: EditText      // Было searchView
+    private lateinit var clearButton: ImageButton   // Новая переменная
+    private lateinit var searchIcon: ImageView      // Новая переменная
 
-    // Переменная для хранения текущего запроса (для логики или передачи дальше)
     private var currentQuery = ""
 
     companion object {
@@ -32,81 +34,73 @@ class SearchActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_search)
 
-        // 1. Инициализация тулбара
-        toolbar = findViewById(R.id.toolbar_search)
+
+        toolbar = findViewById(R.id.topToolbar)
         setSupportActionBar(toolbar)
 
-        // Настройка кнопки "Назад"
         toolbar.setNavigationOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        // 2. Инициализация SearchView
-        searchView = findViewById(R.id.searchView)
 
+        searchQuery = findViewById(R.id.search_query)
+        clearButton = findViewById(R.id.clear_button)
+        searchIcon = findViewById(R.id.search_icon)
 
+        setupSearchField()
 
-        // 3. Настройка SearchView
-        setupSearchView()
-
-        // 4. Восстановление сохраненного запроса (если Activity пересоздалась)
         if (savedInstanceState != null) {
             val restoredQuery = savedInstanceState.getString(SAVED_QUERY_KEY)
             if (!restoredQuery.isNullOrBlank()) {
-                searchView.setQuery(restoredQuery, false) // false = не запускать поиск сразу
+                searchQuery.setText(restoredQuery)
                 currentQuery = restoredQuery
+                clearButton.visibility = View.VISIBLE
             }
         }
     }
 
-    private fun setupSearchView() {
-        // Включаем кнопку отправки (лупа справа)
-        searchView.isSubmitButtonEnabled = true
-
-        // --- ГЛАВНАЯ ЛОГИКА ПОИСКА ---
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-
-            // Вызывается, когда пользователь печатает текст
-            override fun onQueryTextChange(newText: String?): Boolean {
-                currentQuery = newText ?: ""
-                // Здесь можно делать "живой" поиск (фильтрацию списка)
-                // updateRecyclerView(currentQuery)
-                return true
-            }
-
-            // Вызывается, когда пользователь нажал кнопку "Поиск" (лупа справа)
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                currentQuery = query ?: ""
-                performSearch(currentQuery)
-                hideKeyboard()
-                return true
-            }
-        })
-
-        // --- ЛОГИКА КНОПКИ ОЧИСТКИ (КРЕСТИК) ---
-        // В SearchView крестик встроен. Нам нужно просто обработать его нажатие.
-        searchView.setOnCloseListener {
+    private fun setupSearchField() {
+        // Кнопка очистки
+        clearButton.setOnClickListener {
+            searchQuery.text.clear()
             currentQuery = ""
-            // Здесь логика, если нужно очистить список при нажатии крестика
-            // clearResults()
-            true // true = считаем, что обработали клик и закрыли поиск
+            clearButton.visibility = View.GONE
         }
 
-        // Опционально: можно принудительно показать крестик, если он скрыт
-        // searchView.query = ""
+        // Ввод текста
+        searchQuery.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                currentQuery = s.toString()
+                // Показываем крестик, если что-то ввели
+                clearButton.visibility = if (s.isNullOrBlank()) View.GONE else View.VISIBLE
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
+
+        searchQuery.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                currentQuery = searchQuery.text.toString()
+                performSearch(currentQuery)
+                hideKeyboard()
+                true
+            } else {
+                false
+            }
+        }
     }
 
     private fun performSearch(query: String) {
         Toast.makeText(this, "Выполняем поиск по запросу: \$query", Toast.LENGTH_SHORT).show()
-        // Сюда вставляй реальную логику поиска (запрос к базе данных или API)
+
     }
 
     private fun hideKeyboard() {
         val imm = getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
-        imm?.hideSoftInputFromWindow(searchView.windowToken, 0)
+        imm?.hideSoftInputFromWindow(searchQuery.windowToken, 0)
     }
 
-    // Сохраняем состояние при повороте экрана или уходе в фон
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString(SAVED_QUERY_KEY, currentQuery)
