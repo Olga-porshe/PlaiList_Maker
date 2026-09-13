@@ -1,98 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/colorBackground">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
 
-    <LinearLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topToolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorSurface"
+        app:contentInsetEnd="16dp"
+        app:contentInsetStart="16dp"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/search_title"
+        app:titleTextColor="?attr/colorOnSurface" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topToolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorSurface"
-            app:title="@string/search_title"
-            app:titleTextColor="?attr/colorOnSurface"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:contentInsetStart="16dp"
-            app:contentInsetEnd="16dp" />
 
-        <androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_body_16"
+        android:layout_marginTop="@dimen/text_body_8"
+        android:layout_marginEnd="@dimen/text_body_16"
+        android:layout_marginBottom="@dimen/text_body_8"
+        app:cardBackgroundColor="@color/dark2"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="24dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="?attr/colorSurface">
+            android:background="@color/search_field_background"
+            android:padding="8dp">
 
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <EditText
+                android:id="@+id/search_query"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/search_field_background"
-                android:padding="8dp"
-                android:clipChildren="false">
+                android:layout_marginEnd="48dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/vector"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:hint="@string/search_hint"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="@color/search_content_color"
+                android:textColorHint="@android:color/black"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-                <ImageView
-                    android:id="@+id/search_icon"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    app:srcCompat="@drawable/vector"
+            <ImageButton
+                android:id="@+id/clear_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end|center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/clear_search"
+                android:src="@drawable/ic_close"
+                android:visibility="gone"
+                app:tint="@color/search_content_color" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
 
-                    app:tint="@color/search_content_color"
-                    android:contentDescription="@string/search_icon_desc"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="12dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
 
-                <EditText
-                    android:id="@+id/search_query"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:hint="@string/search_hint"
-                    android:maxLines="1"
-                    android:inputType="text"
-                    android:imeOptions="actionSearch"
-                    android:paddingStart="4dp"
-                    android:paddingEnd="16dp"
-                    android:background="@android:color/transparent"
 
-                    android:textColor="@color/search_content_color"
-
-                    android:textColorHint="@color/search_hint_color"
-                    android:textSize="16sp"
-                    android:gravity="center_vertical"
-                    app:layout_constraintStart_toEndOf="@id/search_icon"
-                    app:layout_constraintEnd_toStartOf="@id/clear_button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-
-                <ImageButton
-                    android:id="@+id/clear_button"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_close"
-                    app:tint="@color/search_content_color"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="@string/clear_search"
-                    android:visibility="gone"
-                    android:layout_marginEnd="12dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 

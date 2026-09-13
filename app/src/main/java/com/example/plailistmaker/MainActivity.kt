@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
@@ -20,23 +21,24 @@ class MainActivity : AppCompatActivity() {
 
         val btnMediaLibrary = findViewById<ImageButton>(R.id.media_library)
         val btnSearch = findViewById<ImageButton>(R.id.btnSearch)
+
         val btnSetting = findViewById<ImageButton>(R.id.setting)
 
 
 
         btnSearch.setOnClickListener {
-            val btnSearch = Intent(this, SearchActivity::class.java)
-            startActivity(btnSearch)
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
         }
 
         btnMediaLibrary.setOnClickListener {
-            val btnMediaLibrary = Intent(this, MediaLibraryActivity::class.java)
-            startActivity(btnMediaLibrary)
+            val intent = Intent(this, MediaLibraryActivity::class.java)
+            startActivity(intent)
         }
 
         btnSetting.setOnClickListener {
-            val btnSetting = Intent(this, SettingsActivity::class.java)
-            startActivity(btnSetting)
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
         }
 
 

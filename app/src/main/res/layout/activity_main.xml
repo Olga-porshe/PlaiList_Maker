@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/figma_sinii2">
 
-    <!-- 1. Тулбар с заголовком -->
+
 
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -27,10 +27,6 @@
         />
 
 
-
-
-
-
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -46,7 +42,7 @@
             android:contentDescription="@string/search"
             android:src="@drawable/search"
             style="@style/Style1"
-            app:shapeAppearanceOverlay="@style/RoundedImageButton"
+            app:shapeAppearanceOverlay="@style/Widget.PlaylistMaker.ImageButton.Rounded"
             app:layout_columnWeight="1"
             app:layout_rowWeight="1"
             app:layout_gravity="center"/>
@@ -59,7 +55,7 @@
             android:contentDescription="@string/media_library"
             android:src="@drawable/media_library"
             style="@style/Style1"
-            app:shapeAppearanceOverlay="@style/RoundedImageButton"
+            app:shapeAppearanceOverlay="@style/Widget.PlaylistMaker.ImageButton.Rounded"
             app:layout_columnWeight="1"
             app:layout_rowWeight="1"
             app:layout_gravity="center"/>
@@ -72,7 +68,7 @@
             android:contentDescription="@string/settings"
             android:src="@drawable/settings"
             style="@style/Style1"
-            app:shapeAppearanceOverlay="@style/RoundedImageButton"
+            app:shapeAppearanceOverlay="@style/Widget.PlaylistMaker.ImageButton.Rounded"
             app:layout_columnWeight="1"
             app:layout_rowWeight="1"
             app:layout_gravity="center"/>

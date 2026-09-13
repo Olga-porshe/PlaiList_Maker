@@ -3,17 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <queries>
-        <!-- Разрешаем видеть приложения для отправки почты -->
+
         <intent>
             <action android:name="android.intent.action.SENDTO" />
             <data android:scheme="mailto" />
         </intent>
-        <!-- Разрешаем видеть браузеры -->
+
         <intent>
             <action android:name="android.intent.action.VIEW" />
             <data android:scheme="https" />
         </intent>
-        <!-- Разрешаем видеть приложения для шаринга (как в первой кнопке) -->
+
         <intent>
             <action android:name="android.intent.action.SEND" />
         </intent>

@@ -28,12 +28,12 @@
     <color name="figma_sinii">#3498DB</color>
 
 
+    <color name="colorOnSurface2">#aeaf84</color>
 
-
-    <color name="colorOnSurface">#000000</color> <!-- Чёрный для иконок -->
+    <color name="colorOnSurface">#ffffff</color>
 
     <color name="hint_text_color">#99000000</color>
-    <!-- Светлая тема -->
+
 
     <color name="bg_surface">#FFFFFF</color>
 
@@ -45,24 +45,35 @@
 
     <color name="figma_sinii2">#3772E7</color>
 
-    <color name="search_field_background">#E6E8EB</color>
+    <color name="search_field_background">#1A1b22</color>
     <color name="accent_blue">#2196F3</color>
     <color name="text_secondary">#757575</color>
 
 
-    <color name="search_text_color">#000000</color>       <!-- Черный текст в светлой теме -->
-    <color name="search_hint_color">#888888</color>       <!-- Серый плейсхолдер -->
-
+    <color name="search_text_color">#000000</color>
+    <color name="search_hint_color">#888888</color>
     <color name="search_text_color1">#000000</color>
 
 
 
     <color name="white1">#ffffff</color>
-    <!-- Цвет иконки и текста - черный -->
+
     <color name="search_content_color">#000000</color>
 
 
-    <color name="search_hint_color1">#888888</color>       <!-- Серый плейсхолдер для светлой темы -->
-    <color name="search_icon_color">#000000</color>      <!-- Черная лупа для светлой темы -->
+    <color name="search_hint_color1">#888888</color>
+    <color name="search_icon_color">#000000</color>
+
+    <color name="containerSurface_dark">#FFFFFF</color>
+
+    <color name="nastroiry">#1A1B22</color>
+
+    <color name="contentColor_dark">#FFFFFF</color>
+
+
+    <color name="hintColor_dark">#E9EAED</color>
+
+    <color name="dark2">#ffffff</color>
+
 
 </resources>

@@ -14,7 +14,7 @@
 
 
 
-    <!-- Тексты для кнопок (если они не заданы в layout через @string) -->
+    <!-- Тексты для кнопок  -->
     <string name="share_app_text">Поделиться приложением</string>
     <string name="support_text">Написать в поддержку</string>
     <string name="agreement_text">Пользовательское соглашение</string>
@@ -26,7 +26,7 @@
     <string name="email_subject">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
     <string name="email_body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
 
-    <!-- Email студента (замените на ваш реальный адрес для теста) -->
+    <!-- Email студента  -->
     <string name="student_email">student.email@example.com</string>
 
     <!-- Ссылка на оферту Яндекс Практикума -->

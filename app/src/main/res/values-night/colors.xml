@@ -29,6 +29,8 @@
     <color name="search_content_color">#000000</color>
 
 
+    <color name="colorOnSurface2">#ffffff</color>
+
 
     <color name="search_text_color1">#ffffff</color>
 
@@ -39,5 +41,9 @@
     <color name="search_text_color">#000000</color> <!-- ЧЕРНЫЙ ТЕКСТ -->
     <color name="search_hint_color">#888888</color> <!-- Серый плейсхолдер -->
     <color name="search_icon_color">#000000</color> <!-- ЧЕРНАЯ ЛУПА -->
+
+
+
+   <color name="dark2">#1A1822</color>
 
 </resources>

@@ -1,55 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <resources>
 
-  <style name="Style1" parent="Widget.MaterialComponents.ActionBar.Primary">
 
-        <item name="android:layout_gravity" >center</item>
-        <item name="android:background">@drawable/image_button_background</item>
-        <item name="android:scaleType">centerCrop</item>
-        <item name="android:backgroundTint">@null</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:fontFamily">@font/ys_text_bold</item>
+    <style name="Widget.PlaylistMaker.ListItem.Settings" parent="">
+        <item name="android:fontFamily">@font/ys_display_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
 
-    </style>
-
-
-    <style name="Style2" parent="Widget.MaterialComponents.ActionBar.Primary">
-        <item name="android:background">@drawable/image_button_background</item>
-
-    </style>
-
-    <style name="Widget.PlaylistMaker.Toolbar" parent="Widget.MaterialComponents.ActionBar.Primary">
-        <!-- Убираем тень -->
-        <item name="elevation">0dp</item>
-
-    </style>
-
-    <style name="SettingsNew">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">center</item>
-        <item name="android:layout_marginTop">16dp</item>
-        <item name="android:scaleType">centerCrop</item>
-
-        <!-- Фон через тематический атрибут -->
-        <item name="android:background">?attr/colorSurface</item>
-
-        <!-- Tint для иконок -->
-
-
-
+        <item name="android:background">?attr/selectableItemBackground</item>
 
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-
     </style>
-
-    <style name="RoundedImageButton" parent="">
+    <style name="Widget.PlaylistMaker.ImageButton.Rounded" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>
     </style>
+
+
+    <style name="SettingsListItem" parent="Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">@font/ys_text_regular</item>  <!-- или другой шрифт из вашего проекта -->
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    </style>
+
+        <style name="Widget.PlaylistMaker.Button.Main" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+            <item name="android:fontFamily">@font/ys_text_bold</item>
+
+        </style>
+
+        <style name="Widget.PlaylistMaker.Toolbar" parent="Widget.MaterialComponents.ActionBar.Primary">
+            <item name="elevation">0dp</item>
+        </style>
+
+
+        <style name="Widget.PlaylistMaker.Settings.Item" parent="">
+            <item name="android:fontFamily">@font/ys_display_regular</item>
+            <item name="android:textSize">16sp</item>
+            <item name="android:textColor">@color/nastroiry</item>
+            <item name="android:background">?attr/selectableItemBackground</item>
+            <item name="android:clickable">true</item>
+            <item name="android:focusable">true</item>
+        </style>
 
 </resources>
