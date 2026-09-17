@@ -80,7 +80,6 @@ class SearchActivity : AppCompatActivity() {
         }
     }
 
-
     private fun updateClearButtonVisibility(text: String) {
         clearButton.visibility = if (text.isBlank()) View.GONE else View.VISIBLE
     }
@@ -94,11 +93,5 @@ class SearchActivity : AppCompatActivity() {
         val imm = getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
         imm?.hideSoftInputFromWindow(searchQuery.windowToken, 0)
     }
-    /*
-      override fun onSaveInstanceState(outState: Bundle) {
-          super.onSaveInstanceState(outState)
-          outState.putString(SAVED_QUERY_KEY, currentQuery)
-      }
 
-     */
 }

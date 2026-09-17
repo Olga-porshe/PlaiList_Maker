@@ -7,9 +7,6 @@
     android:orientation="vertical"
     android:background="@color/figma_sinii2">
 
-
-
-
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -23,9 +20,8 @@
 
         app:titleMarginTop="8dp"
         app:titleMarginBottom="8dp"
-        android:layout_marginTop="20dp"
-        />
 
+        />
 
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
@@ -39,6 +35,8 @@
             android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+
             android:contentDescription="@string/search"
             android:src="@drawable/search"
             style="@style/Style1"
@@ -55,6 +53,8 @@
             android:contentDescription="@string/media_library"
             android:src="@drawable/media_library"
             style="@style/Style1"
+            android:layout_weight="1"
+
             app:shapeAppearanceOverlay="@style/Widget.PlaylistMaker.ImageButton.Rounded"
             app:layout_columnWeight="1"
             app:layout_rowWeight="1"
@@ -68,6 +68,7 @@
             android:contentDescription="@string/settings"
             android:src="@drawable/settings"
             style="@style/Style1"
+            android:layout_weight="1"
             app:shapeAppearanceOverlay="@style/Widget.PlaylistMaker.ImageButton.Rounded"
             app:layout_columnWeight="1"
             app:layout_rowWeight="1"
@@ -76,3 +77,5 @@
     </androidx.gridlayout.widget.GridLayout>
 
 </LinearLayout>
+
+

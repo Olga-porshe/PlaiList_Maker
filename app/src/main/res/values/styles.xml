@@ -19,7 +19,7 @@
 
 
     <style name="SettingsListItem" parent="Widget.MaterialComponents.TextView">
-        <item name="android:fontFamily">@font/ys_text_regular</item>  <!-- или другой шрифт из вашего проекта -->
+        <item name="android:fontFamily">@font/ys_text_regular</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="android:padding">16dp</item>
@@ -50,5 +50,30 @@
             <item name="android:clickable">true</item>
             <item name="android:focusable">true</item>
         </style>
+
+    <style name="Style1" parent="Widget.MaterialComponents.ActionBar.Primary">
+
+    <item name="android:layout_gravity" >center</item>
+    <item name="android:background">@drawable/image_button_background</item>
+    <item name="android:scaleType">centerCrop</item>
+    <item name="android:backgroundTint">@null</item>
+    <item name="android:fontFamily">@font/ys_text_bold</item>
+    </style>
+
+    <style name="Style2" parent="Widget.MaterialComponents.ActionBar.Primary">
+        <item name="android:background">@drawable/image_button_background</item>
+
+    </style>
+
+    <style name="Style.ImageButton.Rounded" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@drawable/image_button_background</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:padding">16dp</item>>
+    </style>
+
+
 
 </resources>
