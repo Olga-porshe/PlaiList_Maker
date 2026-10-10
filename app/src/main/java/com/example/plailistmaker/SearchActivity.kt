@@ -2,8 +2,11 @@ package com.example.plailistmaker
 
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
+
+
 import android.view.View
 import android.view.inputmethod.EditorInfo
+
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.enableEdgeToEdge
@@ -40,12 +43,30 @@ class SearchActivity : AppCompatActivity() {
         searchQuery = findViewById(R.id.search_query)
         clearButton = findViewById(R.id.clear_button)
 
+        // Если есть сохраненное состояние (например, поворот экрана), восстанавливаем его сразу
+        if (savedInstanceState != null) {
+            restoreState(savedInstanceState)
+        } else {
+            // Инициализация для первого запуска
+            currentQuery = searchQuery.text.toString()
+            updateClearButtonVisibility(currentQuery)
+        }
+
         setupSearchField()
+    }
 
+    // Метод для сохранения состояния
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(SAVED_QUERY_KEY, currentQuery)
+    }
 
-        val text = searchQuery.text.toString()
-        currentQuery = text
-        updateClearButtonVisibility(text)
+    // Метод для восстановления состояния
+    private fun restoreState(savedInstanceState: Bundle) {
+        val restoredQuery = savedInstanceState.getString(SAVED_QUERY_KEY, "")
+        currentQuery = restoredQuery
+        searchQuery.setText(restoredQuery)
+        updateClearButtonVisibility(restoredQuery)
     }
 
     private fun setupSearchField() {
@@ -53,16 +74,16 @@ class SearchActivity : AppCompatActivity() {
         clearButton.setOnClickListener {
             searchQuery.text.clear()
             currentQuery = ""
-
+            hideKeyboard() // Требование куратора: скрывать клавиатуру при очистке
+            updateClearButtonVisibility("")
         }
-
 
         searchQuery.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 currentQuery = s.toString()
-                updateClearButtonVisibility(s.toString())
+                updateClearButtonVisibility(currentQuery)
             }
 
             override fun afterTextChanged(s: Editable?) {}
@@ -85,13 +106,14 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun performSearch(query: String) {
-
         Toast.makeText(this, "Выполняем поиск по запросу: \$query", Toast.LENGTH_SHORT).show()
     }
 
     private fun hideKeyboard() {
+        val view = currentFocus
         val imm = getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
-        imm?.hideSoftInputFromWindow(searchQuery.windowToken, 0)
+        if (view != null && imm != null) {
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
     }
-
 }
