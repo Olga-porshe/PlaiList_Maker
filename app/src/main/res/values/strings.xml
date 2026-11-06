@@ -12,7 +12,9 @@
     <string name="user_agreement" translatable="false">Пользовательское соглашение</string>
     <string name="write_support" translatable="false">Написать в поддержку</string>
 
+    <string name="track_artwork_desc">Обложка трека</string>
 
+    <string name="search_hint2">Введите название трека или исполнителя</string>
 
 
     <string name="share_app_text">Поделиться приложением</string>
@@ -37,6 +39,10 @@
     <string name="no_results">Ничего не найдено</string>
 
     <string name="search_title">Поиск</string>
+
+    <string name="artist_with_time">%1$s • %2$s</string>
+    <string name="open_track">открыть трек</string>
+    <string name="bullet" translatable="false">\u2022</string>
 
 
 

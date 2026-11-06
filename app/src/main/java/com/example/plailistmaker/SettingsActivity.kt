@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.android.material.textview.MaterialTextView
 
 class SettingsActivity : AppCompatActivity() {
@@ -79,7 +80,20 @@ class SettingsActivity : AppCompatActivity() {
                 Toast.makeText(this, "Не найдено приложение для открытия ссылок", Toast.LENGTH_SHORT).show()
             }
         }
+
+
+  /*
+    val switchDarkTheme = findViewById<SwitchMaterial>(R.id.switch_dark_theme)
+    switchDarkTheme.isChecked = isDarkMode()
+
+    switchDarkTheme.setOnCheckedChangeListener { _, isChecked ->
+        val mode = if (isChecked) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+        AppCompatDelegate.setDefaultNightMode(mode)
+        recreate()
     }
+    */
+
+}
 }
 
 

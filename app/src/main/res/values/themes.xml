@@ -2,7 +2,7 @@
 
     <style name="Base.Theme.PlaiListMaker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
 
 
         <item name="android:windowBackground">@color/bg_surface</item>
@@ -15,6 +15,9 @@
 
         <item name="colorPrimary">@color/figma_sinii2</item>
 
+        <item name="colorOnSurfaceVariant">@color/colorOnSurfaceVariant</item>
+
 
     </style>
+
 </resources>

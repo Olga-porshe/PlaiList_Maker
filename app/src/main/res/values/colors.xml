@@ -30,7 +30,7 @@
 
     <color name="colorOnSurface2">#aeaf84</color>
 
-    <color name="colorOnSurface">#ffffff</color>
+    <color name="colorOnSurface">#000000</color>
 
     <color name="hint_text_color">#99000000</color>
 
@@ -75,5 +75,11 @@
 
     <color name="dark2">#ffffff</color>
 
+
+    <color name="colorSurface">#FFFFFF</color>
+
+    <color name="colorOnSurfaceVariant">#aeafb4</color>
+
+    <color name="artist_name_color">#AEAEAE</color>
 
 </resources>

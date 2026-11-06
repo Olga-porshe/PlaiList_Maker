@@ -30,7 +30,9 @@
         android:layout_marginBottom="@dimen/text_body_8"
         app:cardBackgroundColor="@color/dark2"
         app:cardCornerRadius="8dp"
-        app:cardElevation="4dp">
+        app:cardElevation="0dp">
+
+
 
 
         <FrameLayout
@@ -71,6 +73,15 @@
                 app:tint="@color/search_content_color" />
         </FrameLayout>
     </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
 </LinearLayout>
 
 
