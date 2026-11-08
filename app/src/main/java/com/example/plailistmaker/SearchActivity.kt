@@ -114,7 +114,7 @@ class SearchActivity : AppCompatActivity() {
             findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = TrackAdapter(tracksList) { track ->
-            // логика клика по треку
+
             Toast.makeText(this, "Выбран трек: ${track.trackName}", Toast.LENGTH_SHORT).show()
         }
     }
