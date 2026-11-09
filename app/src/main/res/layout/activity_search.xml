@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorSurface"
+        app:contentInsetEnd="16dp"
+        app:contentInsetStart="16dp"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/search_title"
+        app:titleTextColor="?attr/colorOnSurface" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_body_16"
+        android:layout_marginTop="@dimen/text_body_8"
+        android:layout_marginEnd="@dimen/text_body_16"
+        android:layout_marginBottom="@dimen/text_body_8"
+        app:cardBackgroundColor="@color/dark2"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/search_field_background"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/search_query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/vector"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:hint="@string/search_hint"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="@color/search_content_color"
+                android:textColorHint="@android:color/black"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageButton
+                android:id="@+id/clear_button"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_gravity="end|center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/clear_search"
+                android:src="@drawable/ic_close"
+                android:visibility="gone"
+                app:tint="@color/search_content_color" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+

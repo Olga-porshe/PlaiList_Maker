@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/nastroiki"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/settings"
+        app:navigationIcon="@drawable/arrow_left_back"
+        app:contentInsetStartWithNavigation="0dp"
+        app:titleMarginStart="16dp"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_dark_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/dark_mode"
+        android:textColor="?attr/colorOnSurface"
+        android:fontFamily="@font/ys_display_regular"
+        android:textSize="16sp"
+        android:thumbTint="?attr/colorPrimary"
+        android:trackTint="?attr/colorOnSurfaceVariant" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/podelitsya"
+        android:layout_width="match_parent"
+        style="@style/Widget.PlaylistMaker.ListItem.Settings"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:text="@string/share_app_text"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="16sp"
+        app:drawableEndCompat="@drawable/srannaja_strelka"
+        />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/poddergka"
+        style="@style/Widget.PlaylistMaker.ListItem.Settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:text="@string/support_text"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="16sp"
+        app:drawableEndCompat="@drawable/group"
+        />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/soglashenie"
+        style="@style/Widget.PlaylistMaker.ListItem.Settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:text="@string/user_agreement"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="16sp"
+        app:drawableEndCompat="@drawable/treugolnik"
+        />
+
+</LinearLayout>
