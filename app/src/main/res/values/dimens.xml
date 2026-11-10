@@ -6,6 +6,9 @@
     <dimen name="_24">24dp</dimen>
     <dimen name="_2">2dp</dimen>
     <dimen name="text_body_11">11sp</dimen>
+    <dimen name="track_margin_horizontal"></dimen>
+
+    <dimen name="track_margin_vertical"></dimen>
 
 
 </resources>

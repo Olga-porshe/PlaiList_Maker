@@ -187,8 +187,8 @@ class SearchActivity : AppCompatActivity() {
 
             Glide.with(itemView)
                 .load(track.artworkUrl100)
-                .placeholder(R.drawable.ic_placeholder)
-                .error(R.drawable.ic_placeholder)
+                .placeholder(R.drawable.placeholder_dark)
+                .error(R.drawable.placeholder_dark)
                 .centerCrop()
                 .into(trackImage)
         }
