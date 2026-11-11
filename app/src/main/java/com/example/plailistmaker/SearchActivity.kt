@@ -83,7 +83,7 @@ class SearchActivity : AppCompatActivity() {
         clearButton.setOnClickListener {
             searchQuery.text.clear()
             currentQuery = ""
-            hideKeyboard() // Требование куратора: скрывать клавиатуру при очистке
+            hideKeyboard()
             updateClearButtonVisibility("")
         }
 
@@ -187,8 +187,8 @@ class SearchActivity : AppCompatActivity() {
 
             Glide.with(itemView)
                 .load(track.artworkUrl100)
-                .placeholder(R.drawable.placeholder_dark)
-                .error(R.drawable.placeholder_dark)
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.placeholder)
                 .centerCrop()
                 .into(trackImage)
         }

@@ -49,5 +49,6 @@
    <color name="dark2">#1A1822</color>
 
     <color name="artist_name_color">#8E8E93</color>
+    <color name="placeholder_icon">#AEAFB4</color>
 
 </resources>
