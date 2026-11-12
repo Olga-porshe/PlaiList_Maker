@@ -3,4 +3,11 @@
 
     <dimen name="text_body_16">16sp</dimen>
     <dimen name="text_body_8">8sp</dimen>
+    <dimen name="_24">24dp</dimen>
+    <dimen name="_2">2dp</dimen>
+    <dimen name="text_body_11">11sp</dimen>
+
+
+
+
 </resources>
