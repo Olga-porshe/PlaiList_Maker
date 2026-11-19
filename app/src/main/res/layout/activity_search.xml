@@ -6,9 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:fitsSystemWindows="true"
-    >
-
+    android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topToolbar"
@@ -21,7 +19,6 @@
         app:title="@string/search_title"
         app:titleTextColor="?attr/colorOnSurface" />
 
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,9 +29,6 @@
         app:cardBackgroundColor="@color/dark2"
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp">
-
-
-
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -52,7 +46,8 @@
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
                 android:hint="@string/search_hint"
-                android:imeOptions="actionSearch"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
                 android:inputType="text"
                 android:maxLines="1"
                 android:paddingStart="8dp"
@@ -75,17 +70,121 @@
         </FrameLayout>
     </androidx.cardview.widget.CardView>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"
-        android:paddingBottom="8dp" />
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp" />
+
+        <LinearLayout
+            android:id="@+id/placeholderNoResults"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="210" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/no_results"
+                android:src="@drawable/placeholder_no_results" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/no_results"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="19sp"
+                 />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="470" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/placeholderError"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            android:visibility="gone">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="210" />
+
+
+
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/server_error"
+                android:src="@drawable/placeholder_error"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/server_error_title"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="19sp"
+
+                android:layout_marginBottom="16dp"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/server_error_message"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/refreshButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/black"
+                android:text="@string/refresh"
+                android:textSize="14sp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="54dp"
+                 />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="470" />
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout>
-
-
 
 
 
