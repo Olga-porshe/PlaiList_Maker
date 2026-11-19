@@ -36,7 +36,7 @@
     <string name="search_hint">Поиск</string>
     <string name="search_icon_desc">Иконка поиска</string>
     <string name="clear_search">Очистить поиск</string>
-    <string name="no_results">Ничего не найдено</string>
+    <string name="no_results">Ничего не нашлось</string>
 
     <string name="search_title">Поиск</string>
 
@@ -45,5 +45,9 @@
     <string name="bullet" translatable="false">\u2022</string>
 
 
+    <string name="server_error_title">Проблема со связью</string>
+    <string name="server_error_message">Загрузка не удалась. Проверьте\nподключение к интернету</string>
+    <string name="refresh">Обновить</string>
+    <string name="server_error">Ошибка сервера</string>
 
 </resources>

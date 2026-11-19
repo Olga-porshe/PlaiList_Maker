@@ -29,8 +29,7 @@
     </style>
 
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-    </style>
+
 
         <style name="Widget.PlaylistMaker.Button.Main" parent="Widget.MaterialComponents.Button.UnelevatedButton">
             <item name="android:fontFamily">@font/ys_text_bold</item>
